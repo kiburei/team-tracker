@@ -1,15 +1,9 @@
 class Team
-  @@team = []
-  attr_reader(:team_name, :project_name, :id)
+  attr_reader(:team_name, :project_name)
 
-  define_method(:initialze) do |attributes|
+  define_method(:initialize) do |attributes|
     @team_name = attributes.fetch(:team_name)
     @project_name = attributes.fetch(:project_name)
-    @id = @@team.length.+(1)
-  end
-
-  define_singleton_method(:all) do
-    @@team
   end
 
 end
