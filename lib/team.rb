@@ -20,14 +20,14 @@ class Team
     @@teams = []
   end
 
-  define_singleton_method(:find) do |id|
-    team = nil
+  define_singleton_method(:find) do |team_id|
+    search_team = nil
     @@teams.each do |team|
-      if team.id.eql?(id.to_i)
-        team = team
+      if team.id == team_id.to_i
+        search_team = team
       end
-      team
     end
+    search_team
   end
 
 end

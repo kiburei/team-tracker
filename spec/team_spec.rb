@@ -38,8 +38,10 @@ end
 
 describe('#find') do
   it('return team by its id') do
-    test_team = Team.new({:team_name => "Go Rockets", :project_name => "TNT"})
+    test_team = Team.new({:team_name => "Timbuktu", :project_name => "Gold"})
     test_team.save
-    expect(Team.find(test_team.id)).to(eq(test_team))
+    find_team = Team.new({:team_name => "Go Rockets", :project_name => "TNT"})
+    find_team.save
+    expect(Team.find(find_team.id)).to(eq(find_team))
   end
 end
