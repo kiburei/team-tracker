@@ -20,3 +20,11 @@ describe('#attr_reader') do
       expect(member.skill).to(eq('curving sponsors'))
   end
 end
+
+describe('#fetch all objects') do
+  it('returns all members') do
+    member = Member.new({:full_name => "Minji Minji", :skill => "curving sponsors"})
+    member.save
+    expect(Member.all).to(eq([member]))
+  end
+end
