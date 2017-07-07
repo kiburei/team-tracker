@@ -28,3 +28,11 @@ describe('#fetch all objects') do
     expect(Member.all).to(eq([member]))
   end
 end
+
+describe('#find member') do
+  it('returns member by id') do
+    member = Member.new({:full_name => "Minji Minji", :skill => "curving sponsors"})
+    member.save
+    expect(Member.find(member.id)).to(eq(member))
+  end
+end
