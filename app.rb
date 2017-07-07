@@ -5,6 +5,7 @@ require('sinatra')
   require('./lib/members')
 
   get('/')do
+    @teams = Team.all
     erb(:index)
   end
 
@@ -15,7 +16,11 @@ require('sinatra')
   post('/team') do
     name = params.fetch('team_name')
     project = params.fetch('project_name')
-    team = Team.new({:team_name=> "Toyota", :project_name => "Prius"})
-    team.save()
+    @team = Team.new({:team_name=> name, :project_name => project})
+    @team.save()
     erb(:success)
+  end
+
+  get('/team/:id')do
+        
   end

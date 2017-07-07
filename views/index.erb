@@ -1,2 +1,8 @@
 <h2>Listed Teams</h2>
 <a href="/teams/new">Add New Teams</a>
+
+<div class="">
+  <% @teams.each do |team| %>
+    <a href="/team/:id"><%= team.team_name %> -- <%= team.project_name %></a> </br>
+  <% end %>
+</div>
