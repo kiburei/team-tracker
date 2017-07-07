@@ -22,5 +22,6 @@ require('sinatra')
   end
 
   get('/team/:id')do
-        
+    @team = Team.find(params.fetch('id'))
+    erb(:team)
   end
