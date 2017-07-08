@@ -25,3 +25,7 @@ require('sinatra')
     @team = Team.find(params.fetch('id'))
     erb(:team)
   end
+
+  get('/members/new') do
+    erb(:member_form)
+  end

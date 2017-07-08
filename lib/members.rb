@@ -30,4 +30,5 @@ class Member
   search_member
   end
 
+
 end

@@ -45,3 +45,12 @@ describe('#find') do
     expect(Team.find(find_team.id)).to(eq(find_team))
   end
 end
+
+describe('#add_member')do
+  it('adds new member to team') do
+    test_team = Team.new({:team_name => "Timbuktu", :project_name => "Gold"})
+    test_member = Member.new({:full_name => "Minji Minji", :skill => "curving sponsors"})
+    test_team.add_member(test_member)
+    expect(test_team.members).to(eq([test_member]))
+  end
+end

@@ -1,8 +1,9 @@
 class Team
   @@teams = []
-  attr_reader(:team_name, :project_name, :id)
+  attr_reader(:team_name, :project_name, :id, :members)
 
   define_method(:initialize) do |attributes|
+    @members = []
     @team_name = attributes.fetch(:team_name)
     @project_name = attributes.fetch(:project_name)
     @id = @@teams.length.+(1)
@@ -28,6 +29,10 @@ class Team
       end
     end
     search_team
+  end
+
+  define_method(:add_member)do |member|
+      @members.push(member)
   end
 
 end
