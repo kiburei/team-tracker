@@ -1,3 +1,6 @@
 <h2><%= @team.team_name %></h2>
 <p><%= @team.project_name %></p>
-<a href="/members/new">Add Members to team</a>
+<% @team.members.each do |member| %>
+  <p><%=  member.full_name %> -- <%= member.skill %></p>
+<% end %>
+<a href="/team/<%= @team.id %>/members/new">Add Members to team</a>

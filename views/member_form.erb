@@ -1,4 +1,5 @@
-<form action="/members/new" method="post">
+<form action="/team/<%= @team.id %>/members" method="post">
+  <input id='team_id' name='team_id' type='hidden' value='<%= @team.id %>'>
   <input type="text" name="full_name" id="full_name" placeholder="First and Last Name">
   <input type="text" name="skill" id="skill" placeholder="Specify your skill">
   <button type="submit">Add Member</button>
